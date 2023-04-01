@@ -1,15 +1,19 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Table from 'src/components/Table/Table';
 import styles from './app.module.css';
+import data from './data.json';
 
-import NxWelcome from './nx-welcome';
+interface DataType {
+  name: string;
+  device: string;
+  path: string;
+  status: 'scheduled' | 'available';
+}
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="a-simple-table" />
-
-      <div />
-    </>
+    <div className={styles.tableCard}>
+      <Table<DataType> data={[]} headers={[]} />
+    </div>
   );
 }
 

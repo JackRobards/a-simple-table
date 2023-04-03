@@ -2,17 +2,48 @@
   "extends": ["plugin:@nrwl/nx/react"],
   "root": true,
   "ignorePatterns": ["!**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            // Side effect imports.
+            "^\\u0000",
+            // Packages. `react` related packages come first.
+            "^react",
+            "^@?\\w",
+            // Internal imports.
+            "src\\**",
+            // Relative imports
+            "^[^.]",
+            "^\\.",
+            // Style imports.
+            "^.+\\.s?css$"
+          ]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error"
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-empty-interface": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-empty-interface": "off"
+      }
     }
   ]
 }

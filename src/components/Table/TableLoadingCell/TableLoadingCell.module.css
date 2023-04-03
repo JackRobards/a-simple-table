@@ -1,0 +1,35 @@
+@keyframes loading {
+  0% {
+    background-color: hsl(200, 20%, 92%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeletonWrapper {
+  display: table-cell;
+  padding: 16px;
+}
+
+.skeleton {
+  cursor: progress;
+  border-radius: 4px;
+  width: 50%;
+  height: 1rem;
+  animation: loading 1.5s ease-in-out infinite alternate;
+}
+
+.skeleton[aria-hidden='true'] {
+  display: none;
+}
+
+.visuallyHidden {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}

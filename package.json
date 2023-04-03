@@ -5,12 +5,19 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "lint": "nx lint",
+    "lint:fix": "nx lint --fix",
+    "format": "nx format:write"
   },
   "private": true,
   "dependencies": {
+    "clsx": "^1.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.3",
+    "react-merge-refs": "^2.0.1",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@nrwl/cypress": "15.8.9",
@@ -38,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "jsdom": "~20.0.3",
     "nx": "15.8.9",
     "prettier": "^2.6.2",
@@ -46,6 +54,7 @@
     "vite": "^4.0.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "^4.0.2",
-    "vitest": "^0.25.8"
+    "vitest": "^0.25.8",
+    "vitest-axe": "^0.1.0"
   }
 }

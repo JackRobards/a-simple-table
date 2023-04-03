@@ -1,0 +1,13 @@
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: grey;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.tableCaption {
+  display: table-caption;
+  text-align: left;
+}

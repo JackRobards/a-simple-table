@@ -1,0 +1,9 @@
+.tableCell {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  display: table-cell;
+  text-align: left;
+  padding: 16px;
+  color: rgba(0, 0, 0, 0.87);
+}

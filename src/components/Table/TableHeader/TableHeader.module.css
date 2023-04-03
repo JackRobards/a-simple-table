@@ -1,0 +1,4 @@
+.tableHeader {
+  display: table-header-group;
+  border-top: 1px solid rgba(224, 224, 224, 1);
+}

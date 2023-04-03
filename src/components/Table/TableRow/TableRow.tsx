@@ -1,16 +1,15 @@
+import React from 'react';
+import clsx from 'clsx';
 import styles from './TableRow.module.css';
 
-export interface TableRowProps {
-  row: Record<string, string | number>;
-}
+export interface TableRowProps
+  extends React.HTMLAttributes<HTMLTableRowElement> {}
 
-export function TableRow({ row }: TableRowProps) {
+export function TableRow({ children, className, ...props }: TableRowProps) {
   return (
-    <td>
-      {Object.values(row).map((value, index) => (
-        <span key={index}>{value}</span>
-      ))}
-    </td>
+    <tr className={clsx([styles.tableRow, className])} {...props}>
+      {children}
+    </tr>
   );
 }
 
